@@ -28,7 +28,7 @@ Rails.application.configure do
   # config.assets.css_compressor = :sass
 
   # Do not fallback to assets pipeline if a precompiled asset is missed.
-  config.assets.compile = false
+  config.assets.compile = true
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
   # config.asset_host = "http://assets.example.com"
@@ -69,21 +69,29 @@ Rails.application.configure do
   # config.action_mailer.raise_delivery_errors = false
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = true
-  config.action_mailer.default_url_options = {
-    host: ENV["MAIL_HOST"]
-  }
+  
 
+  Rails.application.routes.default_url_options[:host] = "147.182.187.103"
   config.action_mailer.delivery_method = :mailgun
-
-  config.action_mailer.smtp_settings ={
-    user_name: ENV["SENDMAIL_USERNAME"],
-    password: ENV["SENDMAIL_PASSWORD"],
-    domain: ENV["MAIL_HOST"],
-    address: 'smtp.147.182.187.103.com',
-    port: '587',
-    authentication: :plain,
-    enable_starttls_auto: true
+  config.action_mailer.mailgun_settings = {
+    api_key: ENV["APP_PASSWORD"],
+    domain: ENV["APP_BASE_DOMAIN"]
   }
+  
+  # config.action_mailer.default_url_options = {
+  #   host: ENV["MAIL_HOST"]
+  # }
+
+  # config.action_mailer.delivery_method = :smtp
+  # config.action_mailer.smtp_settings ={
+  #   user_name: ENV["SENDMAIL_USERNAME"],
+  #   password: ENV["SENDMAIL_PASSWORD"],
+  #   domain: '147.182.187.103.com',
+  #   address: 'smtp.mailgun.org',
+  #   port: '587',
+  #   authentication: :plain,
+  #   enable_starttls_auto: true
+  # }
 
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
