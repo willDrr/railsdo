@@ -8,6 +8,8 @@ set :repo_url, "git@github.com:willDrr/railsdo.git"
 # Deploy to the user's home directory
 set :deploy_to, "/home/wild3r/#{fetch :application}"
 
+set :ssh_options, { :forward_agent => true }
+
 set :rbenv_ruby, File.read('.ruby-version').strip
 
 set :rbenv_prefix, '/usr/bin/rbenv exec' #  Cf issue: https://github.com/capistrano/rbenv/issues/96
