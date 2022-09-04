@@ -12,7 +12,7 @@ set :deploy_to, "/home/wild3r/#{fetch :application}"
 
 set :rbenv_ruby, File.read('.ruby-version').strip
 
-set :rbenv_prefix, '/usr/bin/rbenv exec' #  Cf issue: https://github.com/capistrano/rbenv/issues/96
+# set :rbenv_prefix, '/usr/bin/rbenv exec' #  Cf issue: https://github.com/capistrano/rbenv/issues/96
 
 append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', '.bundle', 'public/system', 'public/uploads'
 
