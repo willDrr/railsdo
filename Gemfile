@@ -62,11 +62,14 @@ group :development do
   
   gem 'byebug'
 
-  # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
-  # gem "rack-mini-profiler"
+  # tooling for capistrano
+  gem 'capistrano', '~> 3.11'
 
-  # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
-  # gem "spring"
+  gem 'capistrano-rails', '~> 1.4'
+
+  gem 'capistrano-passenger', '~> 0.2.0'
+
+  gem 'capistrano-rbenv', '~> 2.1', '>= 2.1.4'
 end
 
 group :test do
@@ -76,15 +79,10 @@ group :test do
   gem "webdrivers"
 end
 
-
-gem 'capistrano', '~> 3.11'
-
-gem 'capistrano-rails', '~> 1.4'
-
-gem 'capistrano-passenger', '~> 0.2.0'
-
-gem 'capistrano-rbenv', '~> 2.1', '>= 2.1.4'
-
 gem "devise", "~> 4.8"
 
 gem "mailgun-ruby", "~> 1.2"
+
+gem "ed25519", "~> 1.3"
+
+gem "bcrypt_pbkdf", "~> 1.1"
