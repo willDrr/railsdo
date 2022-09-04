@@ -16,6 +16,8 @@ set :rbenv_ruby, File.read('.ruby-version').strip
 
 append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', '.bundle', 'public/system', 'public/uploads'
 
+append :linked_files,  'config/credentials/production.key'
+
 set :keep_releases, 5
 
 set :branch, 'main'
