@@ -3,12 +3,12 @@ lock "~> 3.17.1"
 
 set :application, "emailzilla"
 
-set :repo_url, "git@github.com:willDrr/railsdo.git"
+# set :repo_url, "git@github.com:willDrr/railsdo.git"
+set :repo_url, "https://github.com/willDrr/railsdo.git"
 
 # Deploy to the user's home directory
 set :deploy_to, "/home/wild3r/#{fetch :application}"
 
-set :ssh_options, { :forward_agent => true }
 
 set :rbenv_ruby, File.read('.ruby-version').strip
 
@@ -18,6 +18,7 @@ append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bund
 
 set :keep_releases, 5
 
+set :branch, 'main'
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
