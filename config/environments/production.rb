@@ -114,5 +114,5 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
-  config.hosts << 'mg.emailzilla.net'
+  config.hosts << 'emailzilla.net'
 end
