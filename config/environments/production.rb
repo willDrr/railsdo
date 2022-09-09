@@ -72,11 +72,6 @@ Rails.application.configure do
   
 
   Rails.application.routes.default_url_options[:host] = "147.182.187.103"
-  # config.action_mailer.delivery_method = :mailgun
-  # config.action_mailer.mailgun_settings = {
-  #   api_key: ENV["APP_PASSWORD"],
-  #   domain: ENV["APP_BASE_DOMAIN"]
-  # }
   
   config.action_mailer.delivery_method = :smtp
   
