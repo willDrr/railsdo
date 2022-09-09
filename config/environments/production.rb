@@ -72,26 +72,23 @@ Rails.application.configure do
   
 
   Rails.application.routes.default_url_options[:host] = "147.182.187.103"
-  config.action_mailer.delivery_method = :mailgun
-  config.action_mailer.mailgun_settings = {
-    api_key: ENV["APP_PASSWORD"],
-    domain: ENV["APP_BASE_DOMAIN"]
-  }
+  # config.action_mailer.delivery_method = :mailgun
+  # config.action_mailer.mailgun_settings = {
+  #   api_key: ENV["APP_PASSWORD"],
+  #   domain: ENV["APP_BASE_DOMAIN"]
+  # }
   
-  # config.action_mailer.default_url_options = {
-  #   host: ENV["MAIL_HOST"]
-  # }
-
-  # config.action_mailer.delivery_method = :smtp
-  # config.action_mailer.smtp_settings ={
-  #   user_name: ENV["SENDMAIL_USERNAME"],
-  #   password: ENV["SENDMAIL_PASSWORD"],
-  #   domain: '147.182.187.103.com',
-  #   address: 'smtp.mailgun.org',
-  #   port: '587',
-  #   authentication: :plain,
-  #   enable_starttls_auto: true
-  # }
+  config.action_mailer.delivery_method = :smtp
+  
+  config.action_mailer.smtp_settings ={
+    user_name: ENV["SENDMAIL_USERNAME"],
+    password: ENV["SENDMAIL_PASSWORD"],
+    domain: 'mg.emailzilla.net',
+    address: 'smtp.mailgun.org',
+    port: '587',
+    authentication: :plain,
+    enable_starttls_auto: true
+  }
 
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
@@ -116,4 +113,6 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  config.hosts << 'emailzilla.net'
 end
