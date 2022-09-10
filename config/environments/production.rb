@@ -71,8 +71,12 @@ Rails.application.configure do
   config.action_mailer.raise_delivery_errors = true
   
 
-  Rails.application.routes.default_url_options[:host] = "147.182.187.103"
-  
+  # Rails.application.routes.default_url_options[:host] = "147.182.187.103"
+
+  config.action_mailer.default_url_options = {
+    host: 'mg.emailzilla.net',
+  } 
+
   config.action_mailer.delivery_method = :smtp
   
   config.action_mailer.smtp_settings ={
@@ -82,7 +86,7 @@ Rails.application.configure do
     address: 'smtp.mailgun.org',
     port: '587',
     authentication: :plain,
-    enable_starttls_auto: true
+    # enable_starttls_auto: true
   }
 
 
