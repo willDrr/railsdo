@@ -114,5 +114,6 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   config.hosts << 'emailzilla.net'
+  config.hosts << 'www.emailzilla.net'
   config.hosts << '147.182.187.103'
 end
